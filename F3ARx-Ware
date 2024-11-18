@@ -83,7 +83,7 @@ end)
 -- Create Credits Text
 local creditsText = Instance.new("TextLabel")
 creditsText.Parent = mainFrame
-creditsText.Text = "Credits: All credits go to GlxckDev for leaking"
+creditsText.Text = "Credits: F3ARx"
 creditsText.Font = Enum.Font.SourceSans
 creditsText.TextSize = 18
 creditsText.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
