@@ -1,0 +1,141 @@
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screenGui.ResetOnSpawn = false
+
+-- Create Main Frame
+local mainFrame = Instance.new("Frame")
+mainFrame.Parent = screenGui
+mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+mainFrame.Size = UDim2.new(0, 300, 0, 250)
+mainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+mainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+mainFrame.BorderSizePixel = 0 -- No border
+
+-- Add a corner to make smooth edges
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 10) -- Smooth edges
+corner.Parent = mainFrame
+
+-- Create Title
+local title = Instance.new("TextLabel")
+title.Parent = mainFrame
+title.Text = "F3ARx Ware"
+title.Font = Enum.Font.SourceSansBold
+title.TextSize = 24
+title.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+title.BackgroundTransparency = 1 -- No background
+title.Size = UDim2.new(1, 0, 0, 50)
+title.Position = UDim2.new(0, 0, 0, 0)
+
+-- Function to create buttons with custom styling
+local function createButton(name, position)
+    local button = Instance.new("TextButton")
+    button.Parent = mainFrame
+    button.Text = name
+    button.Font = Enum.Font.SourceSansBold
+    button.TextSize = 20
+    button.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+    button.Size = UDim2.new(0.8, 0, 0, 40)
+    button.Position = position
+    button.BorderSizePixel = 0 -- No border
+
+    local buttonCorner = Instance.new("UICorner")
+    buttonCorner.CornerRadius = UDim.new(0, 10) -- Smooth edges
+    buttonCorner.Parent = button
+
+    return button
+end
+
+-- Create Camlock Button
+local camlockButton = createButton("Camlock: Off", UDim2.new(0.1, 0, 0, 60))
+local camlockActive = false
+
+camlockButton.MouseButton1Click:Connect(function()
+    camlockActive = not camlockActive
+    if camlockActive then
+        camlockButton.Text = "F3ARx: On"
+        -- Add your script to enable Camlock here
+        loadstring(game:HttpGet("https://pastebin.com/raw/wy8DSnDT"))()
+    else
+        camlockButton.Text = "F3ARx: Off"
+        -- Add your script to disable Camlock here
+    end
+end)
+
+-- Create Resolver Button
+local resolverButton = createButton("Resolver: Off", UDim2.new(0.1, 0, 0, 110))
+local resolverActive = false
+
+resolverButton.MouseButton1Click:Connect(function()
+    resolverActive = not resolverActive
+    if resolverActive then
+        resolverButton.Text = "Resolver: On"
+        -- Add your script to enable Resolver here
+        loadstring(game:HttpGet("https://pastebin.com/raw/0uym6u51"))()
+    else
+        resolverButton.Text = "Resolver: Off"
+        -- Add your script to disable Resolver here
+    end
+end)
+
+-- Create Credits Text
+local creditsText = Instance.new("TextLabel")
+creditsText.Parent = mainFrame
+creditsText.Text = "Credits: All credits go to GlxckDev for leaking"
+creditsText.Font = Enum.Font.SourceSans
+creditsText.TextSize = 18
+creditsText.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+creditsText.BackgroundTransparency = 1 -- No background
+creditsText.Size = UDim2.new(1, 0, 0, 30)
+creditsText.Position = UDim2.new(0, 0, 1, -30)
+
+-- Create Close Button
+local closeButton = Instance.new("TextButton")
+closeButton.Parent = mainFrame
+closeButton.Text = "Close"
+closeButton.Font = Enum.Font.SourceSansBold
+closeButton.TextSize = 20
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+closeButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+closeButton.Size = UDim2.new(0.8, 0, 0, 40)
+closeButton.Position = UDim2.new(0.1, 0, 1, -70)
+closeButton.BorderSizePixel = 0 -- No border
+
+local closeButtonCorner = Instance.new("UICorner")
+closeButtonCorner.CornerRadius = UDim.new(0, 10) -- Smooth edges
+closeButtonCorner.Parent = closeButton
+
+-- Hide GUI function
+local function hideGui()
+    mainFrame.Visible = false
+end
+
+-- Show GUI function
+local function showGui()
+    mainFrame.Visible = true
+end
+
+-- Close button click event
+closeButton.MouseButton1Click:Connect(hideGui)
+
+-- Create Reopen Button
+local reopenButton = Instance.new("TextButton")
+reopenButton.Parent = screenGui
+reopenButton.Text = "#$"
+reopenButton.Font = Enum.Font.SourceSansBold
+reopenButton.TextSize = 24
+reopenButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+reopenButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Black background
+reopenButton.Size = UDim2.new(0, 50, 0, 50)
+reopenButton.Position = UDim2.new(0.5, 0, 0.5, -185) -- Position above the GUI
+reopenButton.AnchorPoint = Vector2.new(0.5, 1)
+reopenButton.BorderSizePixel = 0 -- No border
+
+local reopenButtonCorner = Instance.new("UICorner")
+reopenButtonCorner.CornerRadius = UDim.new(1, 0) -- Circular button
+reopenButtonCorner.Parent = reopenButton
+
+-- Reopen button click event
+reopenButton.MouseButton1Click:Connect(showGui)
