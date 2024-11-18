@@ -57,7 +57,7 @@ camlockButton.MouseButton1Click:Connect(function()
     if camlockActive then
         camlockButton.Text = "F3ARx: On"
         -- Add your script to enable Camlock here
-        loadstring(game:HttpGet("https://pastebin.com/raw/wy8DSnDT"))()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/VardySc/F3ARx/refs/heads/main/Lock-for-ware'))()
     else
         camlockButton.Text = "F3ARx: Off"
         -- Add your script to disable Camlock here
