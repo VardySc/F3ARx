@@ -76,7 +76,7 @@ Mouse.KeyDown:Connect(function(k)
     end	
  end)
 
-local F3ARx = Instance.new("ScreenGui")
+local Hellbound = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local Logo = Instance.new("ImageLabel")
@@ -85,11 +85,11 @@ local UICorner_2 = Instance.new("UICorner")
 
 --Properties:
 
-F3ARx.Name = "F3ARx"
+Hellbound.Name = "F3ARx"
 Hellbound.Parent = game.CoreGui
 Hellbound.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Frame.Parent = F3ARx
+Frame.Parent = Hellbound
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderSizePixel = 0
